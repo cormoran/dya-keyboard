@@ -5,6 +5,7 @@
 ## Features
 
 - Controller: RP2040-zero (QMK) and XAIO NRF52840 plus (ZMK)
+  - ZMK farmware is not available yet, since XAIO NRF52840 plus cannot be used in Japan for now.
 - Layout: US and JIS
 - Switch: Cherry MX compatible, hotswappable
 - LED x 12 (left 4, right 4 + 4 indicator)
@@ -15,7 +16,7 @@
 
 ## Build Guide
 
-Coming soon...
+[V1.0 部品取り付け済み基板（日本語）](./hardware/dya-v1/build-guide/pcba/Readme-ja.md)
 
 ## Gallery
 
@@ -41,10 +42,10 @@ Coming soon... in https://cormoran707.booth.pm/
 
 ## License
 
-- QMK firmware (./farms/qmk_farmware/\*): Inherits its license. Majority of them are under GPLv2
-- DYA logo (./img/dya.svg): All rights reserved.
+- QMK firmware (./farms/qmk_farmware/\*): Inherits its license. Majority of them are under GPLv2. See its own repository.
+- DYA logo <img src="img/dya.svg" width=16> (./img/dya.svg): All rights reserved.
 - Other keyboard pictures under ./img: CC BY
 - Hardware
   - kicad library (./hardware/kicad_library/\*) and sch (\*.kicad_sch): MIT
   - PCB (\*.kicad_pcb): CC BY-NC
-  - Case: CC BY
+  - Case data: CC BY
