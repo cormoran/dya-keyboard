@@ -48,4 +48,4 @@ Coming soon... in https://cormoran707.booth.pm/
 - Hardware
   - kicad library (./hardware/kicad_library/\*) and sch (\*.kicad_sch): MIT
   - PCB (\*.kicad_pcb): CC BY-NC
-  - Case data: CC BY
+  - Case data (\*.stl): CC BY
