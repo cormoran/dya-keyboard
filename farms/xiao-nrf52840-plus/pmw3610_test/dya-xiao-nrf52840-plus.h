@@ -1,0 +1,43 @@
+#ifndef _DYA_XIAO_NRF52840_PLUS_H_
+#define _DYA_XIAO_NRF52840_PLUS_H_
+
+// Common & Right
+#define DYA_PIN_INPUT_VOLTAGE D0
+#define DYA_PIN_MOTION D1
+#define DYA_PIN_COM_LR D2
+#define DYA_PIN_RR0 D3
+#define DYA_PIN_SDIO D4
+#define DYA_PIN_SCLK D5
+#define DYA_PIN_RR1 D6
+#define DYA_PIN_RR2 D7
+#define DYA_PIN_RR3 D8
+#define DYA_PIN_RR4 D9
+#define DYA_PIN_CR13 D10
+
+#define DYA_PIN_CR7 PIN_I2S_SD   // 30
+#define DYA_PIN_CR8 PIN_I2S_SCK  // 31
+#define DYA_PIN_CR9 PIN_I2S_WS   // 32
+#define DYA_PIN_CR10 PIN_NFC1    // 33
+#define DYA_PIN_CR11 PIN_NFC2    // 34
+#define DYA_PIN_RR5 PIN_VBAT     // 35
+
+#define DYA_PIN_CR12 PIN_SPI1_SCK
+#define DYA_PIN_LED PIN_SPI1_MISO
+#define DYA_PIN_LED_EN PIN_SPI1_MOSI
+
+// Left
+#define DYA_PIN_RL1 DYA_PIN_RR1
+#define DYA_PIN_RL2 DYA_PIN_RR2
+#define DYA_PIN_RL3 DYA_PIN_RR3
+#define DYA_PIN_RL4 DYA_PIN_RR4
+// NOTE: RL5 does not exist.
+#define DYA_PIN_CL0 DYA_PIN_CR13
+
+#define DYA_PIN_CL1 DYA_PIN_CR7
+#define DYA_PIN_CL2 DYA_PIN_CR8
+#define DYA_PIN_CL3 DYA_PIN_CR9
+#define DYA_PIN_CL4 DYA_PIN_CR10
+#define DYA_PIN_CL5 DYA_PIN_CR11
+#define DYA_PIN_CL6 DYA_PIN_CR12
+
+#endif  // _DYA_XIAO_NRF52840_PLUS_H_
