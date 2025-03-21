@@ -73,7 +73,7 @@ https://cormoran707.booth.pm/ で配布予定のキット向けのビルドガ�
 
 小さなドリル穴で接続されている部分をニッパーなどで切断してください。
 
-#### 回路基板
+#### 1.1 回路基板
 
 以下のように３つの基板に分かれます。
 
@@ -85,7 +85,7 @@ https://cormoran707.booth.pm/ で配布予定のキット向けのビルドガ�
 
 ![](./img/2_pcb_bottom.jpg)
 
-#### トッププレート
+#### 1.2 トッププレート
 
 トッププレートも同様に分離してください。
 トッププレートは薄い部分があるので、接続部以外が破損しないように注意してください。
@@ -94,7 +94,7 @@ https://cormoran707.booth.pm/ で配布予定のキット向けのビルドガ�
 
 ### 2. はんだ付け
 
-#### PMW3610
+#### 2.1 PMW3610
 
 キット同梱の以下の３つのパーツを用意してください
 
@@ -127,9 +127,9 @@ IC を取り付けたら、IC についていた透明な保護フィルムを�
 
 ![](./img/3_5_trackball2.jpg)
 
-#### RP2040-zero
+#### 2.2 RP2040-zero
 
-別途購入した RP2040-zero にコンスルーを取り付けます。
+別途購入した RP2040-zero にコンスルーを取り付けます。以下の手順で２つの RP2040-zero を作ってください。まず一つ作ってファームウェアの書き込みとキーボードの動作確認までしてから、２つ目を作ると良いかもしれません。
 
 1. 12pin コンスルー x2 を切断して 9pin x2, 3 pin x1, 2pin x1 を作ります。残った 1pin は使用しません。
 2. 以下の画像のように RP2040-zero にとりつけて、**RP2040 側のみを**半田付けします。コンスルーには上下左右があるのでネットで検索して正しい方向で取り付けてください（例えば[この記事など](https://zenn.dev/digitarhythm/articles/276cd44a36ed32)）。以下の写真では左右が間違ってそうです...
@@ -141,9 +141,17 @@ IC を取り付けたら、IC についていた透明な保護フィルムを�
 ### 3. ファームウェアの書き込み
 
 RP2040-zero に QMK ファームウェアを書き込みます。
-...
 
-### 3. 動作確認と組み立て
+1. このレポジトリの [Github action](https://github.com/cormoran/dya-keyboard/actions/workflows/main.yml) の最新のビルドから Artifacts `dya_qmk_latest` をダウンロードして解凍します。
+2. PR2040-zero を PC に接続します
+3. Boot スイッチと Reset スイッチを同時に押して、Reset スイッチ → Boot スイッチの順で離します。PRI-PR2 という名前で USB メモリのようにデバイスが PC と接続されます。
+4. 1 で解答したディレクトリに含まれるファームウェアファイルを USB メモリに移動させる要領で PRI-PR2 にコピーします。
+
+- `via.uf2` は VIA/Remap 対応のファームウェアです。デフォルトは US 配列ですが、[VIA](https://www.usevia.app/) or [Remap](https://remap-keys.app/) でノーコードでキー配列を変更できます。
+  VIA, Remap で必要な json ファイルは [/farms/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json) に置いています。
+- `dya_us.uf2`, `dya_jis.uf2` は VIA 未対応の US, JIS 配列ファームウェアです。
+
+### 4. 動作確認と組み立て
 
 右側のキーボードから組み立てます。
 
