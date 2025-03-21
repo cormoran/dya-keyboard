@@ -12,7 +12,7 @@
     "mousekey": true,
     "nkro": true,
     "split": true,
-    "rgblight": true,
+    "rgb_matrix": true,
     "pointing_device": true
   },
   "bootmagic": {
@@ -285,17 +285,130 @@
       ]
     }
   },
-  "rgblight": {
-    "led_count": 12,
+  "rgb_matrix": {
     "driver": "ws2812",
+    "layout": [
+      {
+        "flags": 2,
+        "x": 15,
+        "y": 64,
+        "matrix": [4, 0]
+      },
+      {
+        "flags": 2,
+        "x": 30,
+        "y": 64,
+        "matrix": [4, 1]
+      },
+      {
+        "flags": 2,
+        "x": 45,
+        "y": 64,
+        "matrix": [4, 2]
+      },
+      {
+        "flags": 2,
+        "x": 60,
+        "y": 64,
+        "matrix": [4, 3]
+      },
+      {
+        "flags": 8,
+        "x": 224,
+        "y": 0
+      },
+      {
+        "flags": 8,
+        "x": 224,
+        "y": 16
+      },
+      {
+        "flags": 8,
+        "x": 224,
+        "y": 32
+      },
+      {
+        "flags": 8,
+        "x": 224,
+        "y": 48
+      },
+      {
+        "flags": 2,
+        "x": 224,
+        "y": 64,
+        "matrix": [10, 6]
+      },
+      {
+        "flags": 2,
+        "x": 209,
+        "y": 64,
+        "matrix": [10, 5]
+      },
+      {
+        "flags": 2,
+        "x": 194,
+        "y": 64,
+        "matrix": [10, 4]
+      },
+      {
+        "flags": 2,
+        "x": 179,
+        "y": 64,
+        "matrix": [10, 3]
+      }
+    ],
     "split": true,
     "split_count": [4, 8],
-    "max_brightness": 128,
-    "led_map": [4, 5, 6, 7, 0, 1, 2, 3, 8, 9, 10, 11],
+    "sleep": true,
     "default": {
-      "on": false,
-      "val": 0
+      "hue": 148,
+      "val": 128
     },
-    "sleep": true
+    "animations": {
+      "solid_color": true,
+      "alpha_mods": true,
+      "gradient_up_down": true,
+      "gradient_left_right": true,
+      "breathing": true,
+      "colorband_sat": true,
+      "colorband_val": true,
+      "colorband_pinwheel_sat": true,
+      "colorband_pinwheel_val": true,
+      "colorband_spiral_sat": true,
+      "colorband_spiral_val": true,
+      "cycle_all": true,
+      "cycle_left_right": true,
+      "cycle_up_down": true,
+      "rainbow_moving_chevron": true,
+      "cycle_out_in": true,
+      "cycle_out_in_dual": true,
+      "cycle_pinwheel": true,
+      "cycle_spiral": true,
+      "dual_beacon": true,
+      "rainbow_beacon": true,
+      "rainbow_pinwheels": true,
+      "flower_blooming": true,
+      "raindrops": true,
+      "jellybean_raindrops": true,
+      "hue_breathing": true,
+      "hue_pendulum": true,
+      "hue_wave": true,
+      "pixel_rain": true,
+      "pixel_flow": true,
+      "pixel_fractal": true,
+      "typing_heatmap": true,
+      "digital_rain": true,
+      "solid_reactive_simple": true,
+      "solid_reactive": true,
+      "solid_reactive_wide": true,
+      "solid_reactive_cross": true,
+      "solid_reactive_nexus": true,
+      "splash": true,
+      "solid_splash": true,
+      "starlight": true,
+      "starlight_dual_sat": true,
+      "starlight_dual_hue": true,
+      "riverflow": true
+    }
   }
 }

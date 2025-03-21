@@ -2,8 +2,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "quantum.h"
-#include "rgblight.h"
+#include "rgb_matrix.h"
 #include "dya.h"
+
+const uint8_t led_indicator_start_index = 4;
+const uint8_t num_led_indicators        = 4;
 
 static uint8_t mouse_layer        = 0xFF;
 static uint8_t scroll_layer       = 0xFF;
@@ -12,12 +15,6 @@ static bool    layer_led_enabled  = false;
 static bool    set_scrolling      = false;
 static int16_t scroll_h_remaining = 0;
 static int16_t scroll_v_remaining = 0;
-
-const rgblight_segment_t PROGMEM        led_default_layer[] = RGBLIGHT_LAYER_SEGMENTS({1, 1, HSV_BLUE});
-const rgblight_segment_t PROGMEM        led_mouse_layer[]   = RGBLIGHT_LAYER_SEGMENTS({2, 1, HSV_BLUE});
-const rgblight_segment_t PROGMEM        led_scroll_layer[]  = RGBLIGHT_LAYER_SEGMENTS({3, 1, HSV_BLUE});
-const rgblight_segment_t PROGMEM        led_config_layer[]  = RGBLIGHT_LAYER_SEGMENTS({0, 4, HSV_GREEN});
-const rgblight_segment_t *const PROGMEM led_rgb_layers[]    = RGBLIGHT_LAYERS_LIST(led_default_layer, led_mouse_layer, led_scroll_layer, led_config_layer);
 
 // functions provided for user
 
@@ -48,7 +45,6 @@ void keyboard_pre_init_kb(void) {
 }
 
 void keyboard_post_init_kb(void) {
-    rgblight_layers = led_rgb_layers;
     keyboard_post_init_user();
 }
 
@@ -62,6 +58,33 @@ void suspend_power_down_kb(void) {
 
 void suspend_wakeup_init_kb(void) {
     suspend_wakeup_init_user();
+}
+
+bool rgb_matrix_indicators_kb(void) {
+    if (!rgb_matrix_indicators_user()) {
+        return false;
+    }
+    if (!layer_led_enabled) {
+        return true;
+    }
+    uint8_t highest_layer = get_highest_layer(layer_state | default_layer_state);
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(led_indicator_start_index, DYA_LED_INDICATOR_ON_RGB);
+    } else {
+#ifndef DYA_LED_INDICATOR_OFF_UNDERGLOW
+        rgb_matrix_set_color(led_indicator_start_index, DYA_LED_INDICATOR_OFF_RGB);
+#endif
+    }
+    for (int i = 1; i < num_led_indicators; i++) {
+        if (highest_layer == i) {
+            rgb_matrix_set_color(i + led_indicator_start_index, DYA_LED_INDICATOR_ON_RGB);
+        } else {
+#ifndef DYA_LED_INDICATOR_OFF_UNDERGLOW
+            rgb_matrix_set_color(i + led_indicator_start_index, DYA_LED_INDICATOR_OFF_RGB);
+#endif
+        }
+    }
+    return true;
 }
 
 layer_state_t default_layer_state_set_kb(layer_state_t state) {
@@ -81,18 +104,6 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
         if (set_scrolling) {
             set_scrolling = false;
             pointing_device_set_cpi(DYA_POINTING_CPI);
-        }
-    }
-    if (layer_led_enabled) {
-        rgblight_set_layer_state(0, layer_state_cmp(state, 0));
-        if (mouse_layer != 0xFF) {
-            rgblight_set_layer_state(1, layer_state_cmp(state, mouse_layer));
-        }
-        if (scroll_layer != 0xFF) {
-            rgblight_set_layer_state(2, layer_state_cmp(state, scroll_layer));
-        }
-        if (config_layer != 0xFF) {
-            rgblight_set_layer_state(3, layer_state_cmp(state, config_layer));
         }
     }
     return layer_state_set_user(state);
