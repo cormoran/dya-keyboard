@@ -2,6 +2,10 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
 
+#ifndef SERIAL_NUMBER
+#    define SERIAL_NUMBER "cormoran.me:dya:v1.0.0:0"
+#endif
+
 #define SERIAL_PIO_USE_PIO1
 #define WS2812_DI_PIN GP15
 

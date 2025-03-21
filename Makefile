@@ -11,6 +11,9 @@ compile:
 	ln -sn $(shell pwd)/farms/qmk/keyboards/${KB} farms/qmk_firmware/keyboards/tmp/${KB} || true
 	cd farms/qmk_firmware; ${QMK} compile -kb tmp/${KB} -km ${KM}
 
+flash:
+	cd farms/qmk_firmware; ${QMK} flash -kb tmp/${KB} -km ${KM}
+
 clean:
 	rm -rf farms/qmk_firmware/keyboards/tmp
 	cd farms/qmk_firmware; ${QMK} clean
