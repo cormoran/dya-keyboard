@@ -18,6 +18,12 @@
 
 [V1.0 部品取り付け済み基板（日本語）](./hardware/dya-v1/build-guide/pcba/Readme-ja.md)
 
+## Firmware
+
+Pre-built QMK firmware is available in latest build's artifact section in [this github actions](https://github.com/cormoran/dya-keyboard/actions/workflows/main.yml).
+
+Three binaries (via, us, jis) are zipped in `dya_qmk_latest.zip`. `via` binary supports [VIA](https://www.usevia.app/) and [Remap](https://remap-keys.app/) to change keymapping. Keyboard definition json for VIA is available in [`./farms/qmk/keybaords/dya/dya-via.json`](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json).
+
 ## Gallery
 
 - Keycap: [acid-caps](https://keeb-on.com/collections/acid-caps) or no-brand white cap
