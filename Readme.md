@@ -44,7 +44,7 @@ Three binaries (via, us, jis) are zipped in `dya_qmk_latest.zip`. `via` binary s
 
 ### Schematic
 
-![](img/v1-schema.jpg)
+![](img/v1-schematic.jpg)
 
 ## Shop
 
