@@ -42,9 +42,13 @@ Three binaries (via, us, jis) are zipped in `dya_qmk_latest.zip`. `via` binary s
 ![](img/jp-crystal-gray.jpg)
 ![](img/jp-crystal-white.jpg)
 
+### Schematic
+
+![](img/v1-schema.jpg)
+
 ## Shop
 
-Coming soon... in https://cormoran707.booth.pm/
+Available in https://cormoran707.booth.pm/items/6705756
 
 ## License
 
