@@ -1,6 +1,12 @@
 # <img src="../../../../img/dya.svg" width=32> DYA v1.0 ビルドガイド
 
-https://cormoran707.booth.pm/ で配布予定のキット向けのビルドガイドです。
+https://cormoran707.booth.pm/items/6705756 で配布中のキット向けのビルドガイドです。
+
+## 更新履歴
+
+| 日付       | 内容                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| 2025/04/01 | ファームウェアのダウンロード先を変更、[ファームウェアガイド](../farmware-guide-ja.md)を追加 |
 
 ## 別途購入が必要な部品
 
@@ -149,7 +155,9 @@ IC を取り付けたら、IC についていた透明な保護フィルムを�
 
 RP2040-zero に QMK ファームウェアを書き込みます。
 
-1. このレポジトリの [Github action](https://github.com/cormoran/dya-keyboard/actions/workflows/main.yml) の最新のビルドから Artifacts `dya_qmk_latest` をダウンロードして解凍します。
+[ファームウェアガイド](../farmware-guide-ja.md) で画像付きで詳細なステップを解説しています。
+
+1. [こちらのページ](https://github.com/cormoran/dya-keyboard/releases) で最新版のファームウェア（zip ファイル）をダウンロードして解凍します。
 2. PR2040-zero を PC に接続します
 3. Boot スイッチと Reset スイッチを同時に押して、Reset スイッチ → Boot スイッチの順で離します。PRI-PR2 という名前で USB メモリのようにデバイスが PC と接続されます。
 4. 1 で解答したディレクトリに含まれるファームウェアファイルを USB メモリに移動させる要領で PRI-PR2 にコピーします。
