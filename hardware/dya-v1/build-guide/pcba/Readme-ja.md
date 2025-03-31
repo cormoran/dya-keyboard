@@ -6,7 +6,7 @@ https://cormoran707.booth.pm/items/6705756 で配布中のキット向けのビ�
 
 | 日付       | 内容                                                                                        |
 | ---------- | ------------------------------------------------------------------------------------------- |
-| 2025/04/01 | ファームウェアのダウンロード先を変更、[ファームウェアガイド](../farmware-guide-ja.md)を追加 |
+| 2025/04/01 | ファームウェアのダウンロード先を変更、[ファームウェアガイド](../firmware-guide-ja.md)を追加 |
 
 ## 別途購入が必要な部品
 
@@ -155,7 +155,7 @@ IC を取り付けたら、IC についていた透明な保護フィルムを�
 
 RP2040-zero に QMK ファームウェアを書き込みます。
 
-[ファームウェアガイド](../farmware-guide-ja.md) で画像付きで詳細なステップを解説しています。
+[ファームウェアガイド](../firmware-guide-ja.md) で画像付きで詳細なステップを解説しています。
 
 1. [こちらのページ](https://github.com/cormoran/dya-keyboard/releases) で最新版のファームウェア（zip ファイル）をダウンロードして解凍します。
 2. PR2040-zero を PC に接続します
@@ -163,7 +163,7 @@ RP2040-zero に QMK ファームウェアを書き込みます。
 4. 1 で解答したディレクトリに含まれるファームウェアファイルを USB メモリに移動させる要領で PRI-PR2 にコピーします。
 
 - `via.uf2` は VIA/Remap 対応のファームウェアです。デフォルトは US 配列ですが、[VIA](https://www.usevia.app/) or [Remap](https://remap-keys.app/) でノーコードでキー配列を変更できます。
-  VIA, Remap で必要な json ファイルは [/farms/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json) に置いています。
+  VIA, Remap で必要な json ファイルは [/firmware/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/firmware/qmk/keyboards/dya/dya-via.json) に置いています。
 - `dya_us.uf2`, `dya_jis.uf2` は VIA 未対応の US, JIS 配列ファームウェアです。
 
 ### 4. 動作確認と組み立て

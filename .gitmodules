@@ -11,5 +11,5 @@
 	path = hardware/kicad_library/external/KiCAD_FootPrint
 	url = git@github.com:Salicylic-acid3/KiCAD_FootPrint.git
 [submodule "farms/qmk_firmware"]
-	path = farms/qmk_firmware
+	path = firmware/qmk_firmware
 	url = git@github.com:qmk/qmk_firmware.git

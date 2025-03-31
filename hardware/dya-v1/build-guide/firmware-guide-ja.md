@@ -19,7 +19,7 @@ https://cormoran707.booth.pm/items/6705756 で配布中のキット向けのフ�
 4. 1 で解答したディレクトリに含まれるファームウェアファイルを USB メモリに移動させる要領で PRI-PR2 にコピーします。
 
    - `via.uf2` は VIA/Remap 対応のファームウェアです。デフォルトは US 配列ですが、[VIA](https://www.usevia.app/) or [Remap](https://remap-keys.app/) でノーコードでキー配列を変更できます。
-     VIA, Remap で必要な json ファイルは [/farms/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json) に置いています。
+     VIA, Remap で必要な json ファイルは [/firmware/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/firmware/qmk/keyboards/dya/dya-via.json) に置いています。
    - `dya_us.uf2`, `dya_jis.uf2` は VIA 未対応の US, JIS 配列ファームウェアです。
    - デフォルトの配列は Mac で使用することを想定した配列になっています。Windows ユーザーの方は VIA 対応ファームウェアをインストールして自分好みに設定を変更してみてください。
 
@@ -71,28 +71,28 @@ LED、ブートモードなどの設定が割り当てられたレイヤーで�
 
 1. https://www.usevia.app/settings を開いて、"Show Design tab" を ON にします
 
-![](./img/farm-via1.png)
+![](./img/firmware-via1.png)
 
-2. https://www.usevia.app/design を開いて、[/farms/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json) をドロップします
+2. https://www.usevia.app/design を開いて、[/firmware/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/firmware/qmk/keyboards/dya/dya-via.json) をドロップします
 
-![](./img/farm-via2.png)
+![](./img/firmware-via2.png)
 
 3. キーボードを PC に接続し、https://www.usevia.app/ からキーボードに接続します
 
    好きなように配列をカスタマイズしてみてください
 
-![](./img/farm-via3.png)
+![](./img/firmware-via3.png)
 
 4. ひとまず LED ライトの色を変えてみると楽しいかもしれません
 
    VIA の一番左下のライトアイコンをクリックすると LED バックライトの設定画面に移ります。明るさや色を調整してみてください。
 
-![](./img/farm-via4.png)
+![](./img/firmware-via4.png)
 
 ## remap の使い方
 
 基本的には VIA と同じです。
-キーボードを接続して、[/farms/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/farms/qmk/keyboards/dya/dya-via.json) をアップロードしてください。
+キーボードを接続して、[/firmware/qmk/keybaords/dya/dyya-via.json](https://github.com/cormoran/dya-keyboard/blob/main/firmware/qmk/keyboards/dya/dya-via.json) をアップロードしてください。
 現在キーボードを登録申請しているので、申請が受理されれば json ファイルのアップロードは不要になると思います。
 
 ## QMK ソースコードの書き換え
@@ -103,9 +103,9 @@ LED、ブートモードなどの設定が割り当てられたレイヤーで�
 
 簡単に要点を書いておくと、
 
-- https://github.com/cormoran/dya-keyboard/tree/main/farms/qmk/keyboards/dya に QMK の keyboards 以下に入るべき DYA のソースコードがあります。細かな設定や配列の定義、PMW3610 の DYA 向けドライバが含まれています。
+- https://github.com/cormoran/dya-keyboard/tree/main/firmware/qmk/keyboards/dya に QMK の keyboards 以下に入るべき DYA のソースコードがあります。細かな設定や配列の定義、PMW3610 の DYA 向けドライバが含まれています。
 - `make init` するとこのレポジトリの submodule として qmk_firmware のソースコードがダウンロードされます
-- `make compile` とすると、`farms/qmk/keyboards/dya` が `farms/qmk_firmware` 以下にコピーされて dya をターゲットにした QMK ビルドが始まります
+- `make compile` とすると、`firmware/qmk/keyboards/dya` が `firmware/qmk_firmware` 以下にコピーされて dya をターゲットにした QMK ビルドが始まります
 
   デフォルトでは US 配列(`KM=default`)がビルドされます。VIA 対応ビルドをするためには `make compile KM=via` と指定します
 

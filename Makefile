@@ -7,13 +7,13 @@ init:
 	git submodule update --init --recursive
 
 compile:
-	mkdir -p ./farms/qmk_firmware/keyboards/tmp
-	ln -sn $(shell pwd)/farms/qmk/keyboards/${KB} farms/qmk_firmware/keyboards/tmp/${KB} || true
-	cd farms/qmk_firmware; ${QMK} compile -kb tmp/${KB} -km ${KM}
+	mkdir -p ./firmware/qmk_firmware/keyboards/tmp
+	ln -sn $(shell pwd)/firmware/qmk/keyboards/${KB} firmware/qmk_firmware/keyboards/tmp/${KB} || true
+	cd firmware/qmk_firmware; ${QMK} compile -kb tmp/${KB} -km ${KM}
 
 flash:
-	cd farms/qmk_firmware; ${QMK} flash -kb tmp/${KB} -km ${KM}
+	cd firmware/qmk_firmware; ${QMK} flash -kb tmp/${KB} -km ${KM}
 
 clean:
-	rm -rf farms/qmk_firmware/keyboards/tmp
-	cd farms/qmk_firmware; ${QMK} clean
+	rm -rf firmware/qmk_firmware/keyboards/tmp
+	cd firmware/qmk_firmware; ${QMK} clean

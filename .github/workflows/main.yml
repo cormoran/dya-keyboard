@@ -18,9 +18,9 @@ jobs:
           make compile KM=jis
           make compile KM=via
           mkdir build
-          mv ./farms/qmk_firmware/tmp_dya_jis.uf2 build/dya_jis.uf2
-          mv ./farms/qmk_firmware/tmp_dya_default.uf2 build/dya_us.uf2
-          mv ./farms/qmk_firmware/tmp_dya_via.uf2 build/via.uf2
+          mv ./firmware/qmk_firmware/tmp_dya_jis.uf2 build/dya_jis.uf2
+          mv ./firmware/qmk_firmware/tmp_dya_default.uf2 build/dya_us.uf2
+          mv ./firmware/qmk_firmware/tmp_dya_via.uf2 build/via.uf2
 
       - uses: actions/upload-artifact@v4
         with:
