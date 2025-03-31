@@ -1,4 +1,4 @@
-# <img src="../../../../img/dya.svg" width=32> DYA v1.0 ファームウェアガイド
+# <img src="../../../img/dya.svg" width=32> DYA v1.0 ファームウェアガイド
 
 https://cormoran707.booth.pm/items/6705756 で配布中のキット向けのファームウェア書き込み/改造ガイドです。
 
